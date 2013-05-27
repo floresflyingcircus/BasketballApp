@@ -1,10 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'jquery-rails'
 gem 'rails', '3.2.13'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'sqlite3'
 
 
@@ -20,10 +18,33 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+group :development do
+  gem 'better_errors'
+  gem 'meta_request'
+  # gem "letter_opener"
+  # gem 'bullet'
+end
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+group :test, :development do
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'rb-fsevent'
+  gem 'guard-rspec'
+  gem 'guard-spork'
+  gem 'launchy'
+  gem 'poltergeist'
+  gem 'shoulda-matchers'
+  gem 'simplecov'
+  gem 'spork'
+  gem 'validates_existence'
+end
+
+
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
