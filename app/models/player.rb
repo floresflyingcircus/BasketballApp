@@ -1,3 +1,4 @@
 class Player < ActiveRecord::Base
-  attr_accessible :in_game, :name, :number
+  has_many :stats
+  attr_accessible :in_game, :name, :number, :stat_ids
 end
