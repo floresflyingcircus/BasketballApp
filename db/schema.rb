@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130528174213) do
+ActiveRecord::Schema.define(:version => 20130529172148) do
+
+  create_table "games", :force => true do |t|
+    t.date     "date"
+    t.time     "start_time"
+    t.string   "opponent"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "players", :force => true do |t|
     t.string   "name"
@@ -20,5 +28,25 @@ ActiveRecord::Schema.define(:version => 20130528174213) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "stats", :force => true do |t|
+    t.integer  "two_made"
+    t.integer  "two_miss"
+    t.integer  "three_made"
+    t.integer  "three_miss"
+    t.integer  "ft_made"
+    t.integer  "ft_miss"
+    t.integer  "off_reb"
+    t.integer  "def_reb"
+    t.integer  "block"
+    t.integer  "assist"
+    t.integer  "steal"
+    t.integer  "turnover"
+    t.integer  "player_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "stats", ["player_id"], :name => "index_stats_on_player_id"
 
 end

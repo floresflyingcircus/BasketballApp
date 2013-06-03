@@ -1,0 +1,47 @@
+<h1>Listing stats</h1>
+
+<table>
+  <tr>
+    <th>Two made</th>
+    <th>Two miss</th>
+    <th>Three made</th>
+    <th>Three miss</th>
+    <th>Ft made</th>
+    <th>Ft miss</th>
+    <th>Off reb</th>
+    <th>Def reb</th>
+    <th>Block</th>
+    <th>Assist</th>
+    <th>Steal</th>
+    <th>Turnover</th>
+    <th>Player</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @stats.each do |stat| %>
+  <tr>
+    <td><%= stat.two_made %></td>
+    <td><%= stat.two_miss %></td>
+    <td><%= stat.three_made %></td>
+    <td><%= stat.three_miss %></td>
+    <td><%= stat.ft_made %></td>
+    <td><%= stat.ft_miss %></td>
+    <td><%= stat.off_reb %></td>
+    <td><%= stat.def_reb %></td>
+    <td><%= stat.block %></td>
+    <td><%= stat.assist %></td>
+    <td><%= stat.steal %></td>
+    <td><%= stat.turnover %></td>
+    <td><%= stat.player %></td>
+    <td><%= link_to 'Show', stat %></td>
+    <td><%= link_to 'Edit', edit_stat_path(stat) %></td>
+    <td><%= link_to 'Destroy', stat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Stat', new_stat_path %>

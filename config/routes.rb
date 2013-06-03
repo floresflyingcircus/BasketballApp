@@ -1,4 +1,10 @@
 BasketballApp::Application.routes.draw do
+  resources :stats
+
+
+  resources :games
+
+
   resources :players
 
 
