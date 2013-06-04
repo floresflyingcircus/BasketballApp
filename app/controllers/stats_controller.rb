@@ -40,7 +40,7 @@ class StatsController < ApplicationController
   # POST /stats
   # POST /stats.json
   def create
-    @stat = Stat.new(params[:stat])
+    @stat = Stat.new(stat_params)
 
     respond_to do |format|
       if @stat.save
@@ -59,7 +59,7 @@ class StatsController < ApplicationController
     @stat = Stat.find(params[:id])
 
     respond_to do |format|
-      if @stat.update_attributes(params[:stat])
+      if @stat.update_attributes(stat_params)
         format.html { redirect_to @stat, notice: 'Stat was successfully updated.' }
         format.json { head :no_content }
       else
@@ -79,5 +79,14 @@ class StatsController < ApplicationController
       format.html { redirect_to stats_url }
       format.json { head :no_content }
     end
+  end
+
+private
+
+  # Use this method to whitelist the permissible parameters. Example:
+  # params.require(:person).permit(:name, :age)
+  # Also, you can specialize this method with per-user checking of permissible attributes.
+  def stat_params
+    params.require(:stat).permit(:assist, :block, :def_reb, :ft_made, :ft_miss, :off_reb, :steal, :three_made, :three_miss, :turnover, :two_made, :two_miss)
   end
 end
