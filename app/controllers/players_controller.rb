@@ -40,7 +40,7 @@ class PlayersController < ApplicationController
   # POST /players
   # POST /players.json
   def create
-    @player = Player.new(params[:player])
+    @player = Player.new(player_params)
 
     respond_to do |format|
       if @player.save
@@ -59,7 +59,7 @@ class PlayersController < ApplicationController
     @player = Player.find(params[:id])
 
     respond_to do |format|
-      if @player.update_attributes(params[:player])
+      if @player.update_attributes(player_params)
         format.html { redirect_to @player, notice: 'Player was successfully updated.' }
         format.json { head :no_content }
       else
@@ -80,4 +80,14 @@ class PlayersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+private
+
+  # Use this method to whitelist the permissible parameters. Example:
+  # params.require(:person).permit(:name, :age)
+  # Also, you can specialize this method with per-user checking of permissible attributes.
+  def player_params
+    params.require(:player).permit(:in_game, :name, :number, :stat_ids)
+  end
+
 end
