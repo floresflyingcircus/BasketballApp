@@ -60,8 +60,8 @@
     <%= f.number_field :turnover %>
   </div>
   <div class="field">
-    <%= f.label :player %><br />
-    <%= f.text_field :player %>
+    <%= f.label :player_id %><br />
+    <%= f.collection_select :player_id, Player.all, :id, :name, { include_blank:  "Select a Player"} %>
   </div>
   <div class="actions">
     <%= f.submit %>
