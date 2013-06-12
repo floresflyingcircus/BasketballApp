@@ -11,3 +11,22 @@
  *= require_self
  *= require_tree .
  */
+body 
+{ 
+  padding-top: 60px; 
+  background-color: #66CCFF !important;
+}
+footer { margin-top: 100px; background-color: #FFFFCC}
+table, td, th 
+{ vertical-align: middle !important; 
+  border: 1px solid #FFFFCC !important; 
+  padding-right: 10px !important;
+  text-align: center !important;
+}
+th 
+{ border-bottom: 3px solid #DDD !important; 
+  padding-bottom: 10px;
+  background-color: #3399FF;
+  color: black;
+}
+h1 { padding-bottom: 20px;}
