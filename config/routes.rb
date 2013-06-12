@@ -1,4 +1,13 @@
 BasketballApp::Application.routes.draw do
+  resources :stats
+
+
+  resources :games
+
+
+  resources :players
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +57,7 @@ BasketballApp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+   root :to => 'stats#index'
 
   # See how all your routes lay out with "rake routes"
 

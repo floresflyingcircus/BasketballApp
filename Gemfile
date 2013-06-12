@@ -3,7 +3,16 @@ source 'https://rubygems.org'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'jquery-rails'
 gem 'rails', '3.2.13'
-gem 'sqlite3'
+
+group :development do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+end
+
+
+gem 'strong_parameters'
 
 
 # Gems used only for assets and not required
@@ -20,6 +29,7 @@ end
 
 group :development do
   gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'meta_request'
   # gem "letter_opener"
   # gem 'bullet'
