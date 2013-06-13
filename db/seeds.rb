@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Game.create(opponent: "Those guys", date: Time.now+2.weeks)
+Game.create(opponent: "Those other guys", date: Time.now+3.weeks)
+Game.create(opponent: "Those other other guys", date: Time.now+4.weeks)
