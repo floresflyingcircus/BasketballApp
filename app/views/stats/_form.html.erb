@@ -1,69 +1,113 @@
 <%= form_for(@stat) do |f| %>
-  <% if @stat.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@stat.errors.count, "error") %> prohibited this stat from being saved:</h2>
+<% if @stat.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@stat.errors.count, "error") %> prohibited this stat from being saved:</h2>
 
-      <ul>
-      <% @stat.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+  <ul>
+    <% @stat.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+<div class="field">
+  <%= f.label :player_id %>
+  <%= f.collection_select :player_id, Player.all, :id, :name, { include_blank:  "Select a Player"} %>
+</div>
+
+<div class="content">
+  <div class="row">
+    <div class="span3">
+      <table class="table table-striped table-bordered table-condensed">
+        <tr>
+          <td>
+            <div class="field">
+              <%= f.label :two_made %>
+              <%= f.number_field :two_made %>
+            </div>
+          </td>
+          <td>
+            <div class="field">
+              <%= f.label :two_miss %>
+              <%= f.number_field :two_miss %>
+            </div>
+          </td>
+          <td>
+            <div class="field">
+              <%= f.label :three_made %>
+              <%= f.number_field :three_made %>
+            </div>
+          </td>
+          <td>
+            <div class="field">
+              <%= f.label :three_miss %>
+              <%= f.number_field :three_miss %>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <div class="field">
+              <%= f.label :ft_made %>
+              <%= f.number_field :ft_made %>
+            </div>
+          </td>
+          <td>
+            <div class="field">
+              <%= f.label :ft_miss %>
+              <%= f.number_field :ft_miss %>
+            </div>
+          </td>
+          <td>
+            <div class="field">
+              <%= f.label :off_reb %>
+              <%= f.number_field :off_reb %>
+            </div>
+          </td>
+          <td>
+            <div class="field">
+              <%= f.label :def_reb %>
+              <%= f.number_field :def_reb %>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <div class="field">
+              <%= f.label :block %>
+              <%= f.number_field :block %>
+            </div>
+          </td>
+          <td>
+            <div class="field">
+              <%= f.label :assist %>
+              <%= f.number_field :assist %>
+            </div>
+          </td>
+          <td>
+            <div class="field">
+              <%= f.label :steal %>
+              <%= f.number_field :steal %>
+            </div>
+          </td>
+          <td>
+            <div class="field">
+              <%= f.label :turnover %>
+              <%= f.number_field :turnover %>
+            </div>
+          </td>
+
+        </table>
+      </div>
     </div>
-  <% end %>
+  
 
-  <div class="field">
-    <%= f.label :two_made %><br />
-    <%= f.number_field :two_made %>
-  </div>
-  <div class="field">
-    <%= f.label :two_miss %><br />
-    <%= f.number_field :two_miss %>
-  </div>
-  <div class="field">
-    <%= f.label :three_made %><br />
-    <%= f.number_field :three_made %>
-  </div>
-  <div class="field">
-    <%= f.label :three_miss %><br />
-    <%= f.number_field :three_miss %>
-  </div>
-  <div class="field">
-    <%= f.label :ft_made %><br />
-    <%= f.number_field :ft_made %>
-  </div>
-  <div class="field">
-    <%= f.label :ft_miss %><br />
-    <%= f.number_field :ft_miss %>
-  </div>
-  <div class="field">
-    <%= f.label :off_reb %><br />
-    <%= f.number_field :off_reb %>
-  </div>
-  <div class="field">
-    <%= f.label :def_reb %><br />
-    <%= f.number_field :def_reb %>
-  </div>
-  <div class="field">
-    <%= f.label :block %><br />
-    <%= f.number_field :block %>
-  </div>
-  <div class="field">
-    <%= f.label :assist %><br />
-    <%= f.number_field :assist %>
-  </div>
-  <div class="field">
-    <%= f.label :steal %><br />
-    <%= f.number_field :steal %>
-  </div>
-  <div class="field">
-    <%= f.label :turnover %><br />
-    <%= f.number_field :turnover %>
-  </div>
-  <div class="field">
-    <%= f.label :player_id %><br />
-    <%= f.collection_select :player_id, Player.all, :id, :name, { include_blank:  "Select a Player"} %>
-  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
-<% end %>
+  
+  <% end %>

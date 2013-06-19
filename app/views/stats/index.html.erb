@@ -1,47 +1,72 @@
 <h1>Stats</h1>
 
-<table>
-  <tr>
-    <th>Two made</th>
-    <th>Two miss</th>
-    <th>Three made</th>
-    <th>Three miss</th>
-    <th>Ft made</th>
-    <th>Ft miss</th>
-    <th>Off reb</th>
-    <th>Def reb</th>
-    <th>Block</th>
-    <th>Assist</th>
-    <th>Steal</th>
-    <th>Turnover</th>
-    <th>Player</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="content">
+    <div class="row">
+        <div class="span3">
+            <h2>What</h2>
+            This is my basketball stats app to collect 
+            real-time data at game and minimize data-entry
+            post-game.
+        </div>
+        <div class="span3">
+            <h2>How</h2>
+            The goal is for multiple people to collect stats during a game.
+        </div>
+    </div>
+</div>
 
-<% @stats.each do |stat| %>
-  <tr>
-    <td><%= stat.two_made %></td>
-    <td><%= stat.two_miss %></td>
-    <td><%= stat.three_made %></td>
-    <td><%= stat.three_miss %></td>
-    <td><%= stat.ft_made %></td>
-    <td><%= stat.ft_miss %></td>
-    <td><%= stat.off_reb %></td>
-    <td><%= stat.def_reb %></td>
-    <td><%= stat.block %></td>
-    <td><%= stat.assist %></td>
-    <td><%= stat.steal %></td>
-    <td><%= stat.turnover %></td>
-    <td><%= stat.player_name %></td>
-    <td><%= link_to 'Show', stat %></td>
-    <td><%= link_to 'Edit', edit_stat_path(stat) %></td>
-    <td><%= link_to 'Destroy', stat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<div class="content">
+    <div class="row">
+        <div class="span3">
+            <table class="table table-striped table-bordered table-condensed">
+              <tr>
+                <th>Player</th>
+                <th>Two made</th>
+                <th>Two miss</th>
+                <th>Three made</th>
+                <th>Three miss</th>
+                <th>Ft made</th>
+                <th>Ft miss</th>
+                <th>Off reb</th>
+                <th>Def reb</th>
+                <th>Block</th>
+                <th>Assist</th>
+                <th>Steal</th>
+                <th>Turnover</th>
+                
+                <th></th>
+                
+            </tr>
 
-<br />
+            <% @stats.each do |stat| %>
+            <tr>
+                <td><%= stat.player_name %></td>
+                <td><%= stat.two_made %></td>
+                <td><%= stat.two_miss %></td>
+                <td><%= stat.three_made %></td>
+                <td><%= stat.three_miss %></td>
+                <td><%= stat.ft_made %></td>
+                <td><%= stat.ft_miss %></td>
+                <td><%= stat.off_reb %></td>
+                <td><%= stat.def_reb %></td>
+                <td><%= stat.block %></td>
+                <td><%= stat.assist %></td>
+                <td><%= stat.steal %></td>
+                <td><%= stat.turnover %></td>
+                
+                <td>
+                    <%= link_to 'Show', stat %>
+                    <%= link_to 'Edit', edit_stat_path(stat) %>
+                    <%= link_to 'Destroy', stat, method: :delete, data: { confirm: 'Are you sure?' } %>
+                </td>
+            </tr>
+            <% end %>
+        </table>
 
-<%= link_to 'New Stat', new_stat_path %>
+        <br />
+
+        <%= link_to 'New Stat', new_stat_path, :class => "btn" %>
+
+    </div>
+</div>
+</div>

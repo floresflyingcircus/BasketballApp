@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'jquery-rails'
 gem 'rails', '3.2.13'
+gem 'bootstrap-sass'
+
 
 group :development do
   gem 'sqlite3'
