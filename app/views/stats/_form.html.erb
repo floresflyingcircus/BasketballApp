@@ -12,6 +12,26 @@
 <% end %>
 
 
+<div class="content">
+<div class="btn-group">
+    <button class="btn">Micayla</button>
+    <button class="btn">Micayla</button>
+    <button class="btn">Micayla</button>
+    <button class="btn">Micayla</button>
+
+    <button class="btn">Micayla</button>
+    <button class="btn">Micayla</button>
+    <button class="btn">Micayla</button>
+    <button class="btn">Micayla</button>
+
+    <button class="btn">Micayla</button>
+    <button class="btn">Micayla</button>
+    <button class="btn">Micayla</button>
+    <button class="btn">Micayla</button>
+</div>
+
+
+
 <div class="field">
   <%= f.label :player_id %>
   <%= f.collection_select :player_id, Player.all, :id, :name, { include_blank:  "Select a Player"} %>
@@ -83,7 +103,8 @@
             </div>
           </td>
           <td>
-            <div class="field">
+         
+           <div class="field">
               <%= f.label :assist %>
               <%= f.number_field :assist %>
             </div>

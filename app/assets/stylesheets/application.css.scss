@@ -11,12 +11,22 @@
  *= require_self
  *= require_tree .
  */
+
+/*head
+{
+  background-image: image-url("basketball.jpg");
+  background-repeat: repeat;
+}
+*/
+
+
 body 
 { 
   padding-top: 60px; 
   background-color: #66CCFF !important;
+  background-image: image-url("basketball_light.jpg");
 }
-footer { margin-top: 100px; background-color: #FFFFCC}
+footer { margin-bottom: 20px; background-color: #FFFFCC}
 table, td, th 
 { 
   /*
