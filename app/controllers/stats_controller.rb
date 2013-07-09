@@ -81,6 +81,11 @@ class StatsController < ApplicationController
     end
   end
 
+  # method to set active player
+  def set_active_player
+    flash[:notice] = "You have set the active player"
+  end
+
 private
 
   # Use this method to whitelist the permissible parameters. Example:
@@ -90,3 +95,5 @@ private
     params.require(:stat).permit(:assist, :block, :def_reb, :ft_made, :ft_miss, :off_reb, :steal, :three_made, :three_miss, :turnover, :two_made, :two_miss, :player_id)
   end
 end
+
+

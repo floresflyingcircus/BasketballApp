@@ -14,23 +14,24 @@
 
 <div class="content">
 <div class="btn-group">
-    <button class="btn">Micayla</button>
-    <button class="btn">Micayla</button>
-    <button class="btn">Micayla</button>
-    <button class="btn">Micayla</button>
+    
+    <% @players = Player.all %>
+    <% @players.each do |player| %>
+       <button class="btn"><%= player.name %></button>
+    <% end %>
+  </div>
 
-    <button class="btn">Micayla</button>
-    <button class="btn">Micayla</button>
-    <button class="btn">Micayla</button>
-    <button class="btn">Micayla</button>
+  
+<%= flash[:notice] %>
 
-    <button class="btn">Micayla</button>
-    <button class="btn">Micayla</button>
-    <button class="btn">Micayla</button>
-    <button class="btn">Micayla</button>
-</div>
+<div class="field">
+  <%= f.label :player_id %>
+  <% @players.each do |player| %>
+   <%= f.radio_button(:player_id, player) %>
+   <%= player.name %>
+<% end %>
 
-
+</div> 
 
 <div class="field">
   <%= f.label :player_id %>

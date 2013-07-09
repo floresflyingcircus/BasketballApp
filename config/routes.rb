@@ -1,13 +1,17 @@
 BasketballApp::Application.routes.draw do
   devise_for :users
 
-  resources :stats
+  resources :stats do 
+    get :set_active_player, :on => :member
+  end
 
 
   resources :games
 
 
   resources :players
+
+
 
 
   # The priority is based upon order of creation:
