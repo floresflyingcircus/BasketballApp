@@ -26,17 +26,18 @@
 
 <div class="field">
   <%= f.label :player_id %>
-  <% @players.each do |player| %>
-   <%= f.radio_button(:player_id, player) %>
-   <%= player.name %>
-<% end %>
-
-</div> 
-
-<div class="field">
-  <%= f.label :player_id %>
   <%= f.collection_select :player_id, Player.all, :id, :name, { include_blank:  "Select a Player"} %>
 </div>
+
+<div class="field">
+   <%= f.label :player_id %>
+   <% @players.each do |player| %>
+     <%= f.radio_button(:player_id, :name) %>
+     <%= player.name %>
+   <% end %>
+</div> 
+
+
 
 <div class="content">
   <div class="row">
