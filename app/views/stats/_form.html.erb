@@ -32,7 +32,7 @@
 <div class="field">
    <%= f.label :player_id %>
    <% @players.each do |player| %>
-     <%= f.radio_button(:player_id, :name) %>
+     <%= f.radio_button(:player_id, player.id) %>
      <%= player.name %>
    <% end %>
 </div> 
