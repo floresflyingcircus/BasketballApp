@@ -24,6 +24,7 @@
                 <thead>
               <tr>
                 <th>Player</th>
+                <th>Fouls</th>
                 <th>Two</th>
                 <th>Three</th>
                 <th>FT</th>
@@ -41,6 +42,7 @@
             <% @stats.each do |stat| %>
             <tr>
                 <td><%= stat.player_name %></td>
+                <td><%= stat.fouls %></td>
                 
                 <% @total_two = stat.two_made.to_i + stat.two_miss.to_i %>
                 <% @ratio_two = [stat.two_made, " / ", @total_two].join %>
@@ -73,6 +75,7 @@
         <tfoot>
             <tr>
                 <td>TOTALS</td>
+                <td><%= Stat.sum(:fouls) %></td>
                     <% @team_total_two = Stat.sum(:two_made) + Stat.sum(:two_miss) %>
                     <% @team_ratio_two = [Stat.sum(:two_made), " / ", @team_total_two].join %>
                 <td><%= @team_ratio_two %></td>
@@ -112,6 +115,7 @@
                 <thead>
               <tr>
                 <th>Player</th>
+                <th>Fouls</th>
                 <th>Two made</th>
                 <th>Two miss</th>
                 <th>Three made</th>
@@ -132,6 +136,7 @@
             <% @stats.each do |stat| %>
             <tr>
                 <td><%= stat.player_name %></td>
+                <td><%= stat.fouls %></td>
                 <td><%= stat.two_made %></td>
                 <td><%= stat.two_miss %></td>
                 <td><%= stat.three_made %></td>
@@ -157,6 +162,7 @@
         <tfoot>
             <tr>
                 <td>TOTALS</td>
+                <td><%= Stat.sum(:fouls) %></td>
                 <td><%= Stat.sum(:two_made) %></td>
                 <td><%= Stat.sum(:two_miss) %></td>
                 <td><%= Stat.sum(:three_made) %></td>

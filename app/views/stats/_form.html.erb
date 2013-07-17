@@ -123,14 +123,29 @@
               <%= f.number_field :turnover %>
             </div>
           </td>
+        </tr>
+
+        <tr>
+          <td>
+            <div class="field">
+              <%= f.label :fouls %>
+              <%= f.number_field :fouls %>
+            </div>
+          </td>
+          <td></td>
+          <td></td>
+          <td>
+            <div class="actions">
+              <%= f.submit %>
+            </div>
+          </td>
+        </tr>
 
         </table>
       </div>
     </div>
   
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  
   
   <% end %>

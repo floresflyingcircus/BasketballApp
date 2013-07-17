@@ -44,7 +44,7 @@ class StatsController < ApplicationController
 
     respond_to do |format|
       if @stat.save
-        format.html { redirect_to @stat, notice: 'Stat was successfully created.' }
+        format.html { redirect_to new_stat_path, notice: 'Stat was successfully created.' }
         format.json { render json: @stat, status: :created, location: @stat }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class StatsController < ApplicationController
 
     respond_to do |format|
       if @stat.update_attributes(stat_params)
-        format.html { redirect_to @stat, notice: 'Stat was successfully updated.' }
+        format.html { redirect_to new_stat_path, notice: 'Stat was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -92,7 +92,7 @@ private
   # params.require(:person).permit(:name, :age)
   # Also, you can specialize this method with per-user checking of permissible attributes.
   def stat_params
-    params.require(:stat).permit(:assist, :block, :def_reb, :ft_made, :ft_miss, :off_reb, :steal, :three_made, :three_miss, :turnover, :two_made, :two_miss, :player_id)
+    params.require(:stat).permit(:assist, :block, :def_reb, :fouls, :ft_made, :ft_miss, :off_reb, :steal, :three_made, :three_miss, :turnover, :two_made, :two_miss, :player_id)
   end
 end
 
