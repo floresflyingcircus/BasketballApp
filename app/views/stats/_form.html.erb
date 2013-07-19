@@ -21,6 +21,10 @@
     <% end %>
   </div>
 
+<div class="field">
+  <%= f.label :game_id %>
+  <%= f.collection_select :game_id, Game.all, :id, :opponent, { include_blank: "Select a Game"} %> 
+</div>
 
 
 
