@@ -92,7 +92,7 @@ private
   # params.require(:person).permit(:name, :age)
   # Also, you can specialize this method with per-user checking of permissible attributes.
   def stat_params
-    params.require(:stat).permit(:assist, :block, :def_reb, :fouls, :ft_made, :ft_miss, :off_reb, :steal, :three_made, :three_miss, :turnover, :two_made, :two_miss, :player_id)
+    params.require(:stat).permit(:assist, :block, :def_reb, :fouls, :ft_made, :ft_miss, :off_reb, :steal, :three_made, :three_miss, :turnover, :two_made, :two_miss, :player_id, :game_id)
   end
 end
 

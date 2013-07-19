@@ -21,13 +21,8 @@
     <% end %>
   </div>
 
-  
-<%= flash[:notice] %>
 
-<div class="field">
-  <%= f.label :player_id %>
-  <%= f.collection_select :player_id, Player.all, :id, :name, { include_blank:  "Select a Player"} %>
-</div>
+
 
 <div class="field">
    <%= f.label :player_id %>

@@ -34,6 +34,7 @@
                 <th>Asst</th>
                 <th>Steal</th>
                 <th>TO</th>
+                <th>Game</th>
                 
                 <th></th>
                 
@@ -62,6 +63,7 @@
                 <td><%= stat.assist %></td>
                 <td><%= stat.steal %></td>
                 <td><%= stat.turnover %></td>
+                <td><%= stat.game_id %></td>
                 
                 <!-- <td>
                     <%= link_to 'Show', stat %>
@@ -94,6 +96,7 @@
                 <td><%= Stat.sum(:assist) %></td>
                 <td><%= Stat.sum(:steal) %></td>
                 <td><%= Stat.sum(:turnover) %></td>
+                <td></td>
                 <td></td>
         </tfoot>
         </table>
@@ -128,6 +131,7 @@
                 <th>Assist</th>
                 <th>Steal</th>
                 <th>Turnover</th>
+                <th>Game</th>
                 
                 <th></th>
                 
@@ -149,6 +153,8 @@
                 <td><%= stat.assist %></td>
                 <td><%= stat.steal %></td>
                 <td><%= stat.turnover %></td>
+                <td><%= stat.game_id %></td>
+
                 
                 <td>
                     <%= link_to 'Show', stat %>
@@ -175,6 +181,7 @@
                 <td><%= Stat.sum(:assist) %></td>
                 <td><%= Stat.sum(:steal) %></td>
                 <td><%= Stat.sum(:turnover) %></td>
+                <td></td>
                 <td></td>
         </tfoot>
         </table>

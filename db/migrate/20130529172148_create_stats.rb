@@ -14,9 +14,10 @@ class CreateStats < ActiveRecord::Migration
       t.integer :steal
       t.integer :turnover
       t.references :player
+      t.references :game
 
       t.timestamps
     end
-    add_index :stats, :player_id
+    add_index :stats, :player_id, :game_id
   end
 end
