@@ -18,6 +18,7 @@ class CreateStats < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :stats, :player_id, :game_id
+    add_index :stats, :player_id
+    add_index :stats, :game_id
   end
 end

@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20130717193301) do
     t.integer  "steal"
     t.integer  "turnover"
     t.integer  "player_id"
+    t.integer  "game_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "fouls"
