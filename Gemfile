@@ -7,13 +7,16 @@ gem 'bootstrap-sass'
 gem 'devise'
 
 
-group :development do
-  gem 'sqlite3'
-end
-group :production do
-  gem 'pg'
-  #gem 'rails\_12factor'
-end
+
+ group :development do
+   gem 'sqlite3'
+ end
+ group :production do
+   gem 'pg'
+#   #gem 'rails_12factor'
+ end
+
+
 
 
 gem 'strong_parameters'
